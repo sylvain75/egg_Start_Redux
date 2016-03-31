@@ -34,7 +34,8 @@ The '''Store''' is the object that brings them together. The store has the follo
 - Registers listeners via '''subscribe(listener)''';
 - Handles unregistering of listeners via the function returned by - '''subscribe(listener)'''.
 
-```const counter = ( state = 0, action ) => {
+```
+const counter = ( state = 0, action ) => {
   switch ( action.type ) {
     case 'INCREMENT':
       return STATE + 1;
