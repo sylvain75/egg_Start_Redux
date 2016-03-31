@@ -14,7 +14,7 @@
 - predictable
 - given same argument -> same output
 - eg create new array rather than modify it
-- .map, .slice, ...
+- ```.map```, ```.slice```, ...
 
 ## Impure Functions
 - call database, network
@@ -29,7 +29,7 @@ to return next state app__
 The ```Store``` is the object that brings them together. The store has the following responsibilities:
 
 - Holds application state;
-- Allows access to state via getState()```;
+- Allows access to state via ```getState()```;
 - Allows state to be updated via ```dispatch(action)```;
 - Registers listeners via ```subscribe(listener)```;
 - Handles unregistering of listeners via the function returned by - ```subscribe(listener)```.
