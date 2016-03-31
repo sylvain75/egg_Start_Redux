@@ -1,7 +1,7 @@
 # From EggHead
 
 ## Redux
-- State tree is redonding (can't modify)
+- State tree is redundant (can't modify)
 - Action is the representation of the change of the data
 	- need to have type property (can't be undefined)
   - ```Previous state``` + ```action``` dispatched => ```next state``` object (!== object than ```previous state```)
