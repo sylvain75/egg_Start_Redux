@@ -4,7 +4,7 @@
 - State tree is redonding (can't modify)
 - Action is the representation of the change of the data
 	- need to have type property (can't be undefined)
-  - '''Previous state''' + '''action''' dispatched => '''next state''' object (!== object than '''previous state''')
+  - ```Previous state``` + ```action``` dispatched => ```next state``` object (!== object than ```previous state```)
 - We can change the ```State``` tree by dispatching an ```Action``` (JS Object)
 - Component dispatch ```action```
 
@@ -26,13 +26,13 @@ to return next state app__
 
 ## Sample redux App
 
-The '''Store''' is the object that brings them together. The store has the following responsibilities:
+The ```Store``` is the object that brings them together. The store has the following responsibilities:
 
 - Holds application state;
-- Allows access to state via '''getState()''';
-- Allows state to be updated via '''dispatch(action)''';
-- Registers listeners via '''subscribe(listener)''';
-- Handles unregistering of listeners via the function returned by - '''subscribe(listener)'''.
+- Allows access to state via getState()```;
+- Allows state to be updated via ```dispatch(action)```;
+- Registers listeners via ```subscribe(listener)```;
+- Handles unregistering of listeners via the function returned by - ```subscribe(listener)```.
 
 ```
 const counter = ( state = 0, action ) => {
@@ -65,8 +65,3 @@ document.addEventListener('click', () => {
   //.dispatch trigger an action to change app state
 });
 ```
-
-__4 methods:__
-- .getState()
-- .dispatch( action )
-- .subscribe( listener )
