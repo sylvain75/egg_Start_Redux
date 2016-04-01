@@ -65,3 +65,51 @@ document.addEventListener('click', () => {
   //.dispatch trigger an action to change app state
 });
 ```
+
+With React (rather than manually updating the DOM):
+
+const counter = ( state = 0, action ) => {
+  switch ( action.type ) {
+    case 'INCREMENT':
+      return STATE + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+const Counter = ({
+  value,
+  onIncrement,
+  onDecrement
+}) => (
+  <div>
+    <h1>{ value }</h1>
+    <Button onClick={ onIncrement } >+</Button>
+    <Button onClick={ onDecrement } >-</Button>
+  </div>
+);
+
+const ( createStore ) = Redux;
+// = import { createStore } from 'redux';
+const store = createStore(counter);
+
+const render = () => {
+  ReactDOM.render(
+    <Counter
+      value={ store.getState() }
+      onIncrement={() =>
+        store.dispatch({
+          type: 'INCREMENT'
+          })
+        }
+      />,
+      document.getElementById('root')
+  );
+};
+
+store.subscribe( render );
+//.subscribe let us register a callback that will fire each time an action trigger
+render();
+```
